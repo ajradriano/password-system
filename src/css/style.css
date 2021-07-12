@@ -11,7 +11,6 @@
 body {
   width: 100vw;
   height: 100vh;
-  padding: 5px;
   font-family: 'MontSerrat', Arial, sans-serif;
   font-size: 100%;
   list-style-type: none;
@@ -23,9 +22,8 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1.25fr 1.25fr;
-  grid-row-gap: 20px;
-  grid-column-gap: 40px;
+  grid-template-rows: 0.3fr 1fr 1.5fr 1.5fr;
+  grid-gap: 10px;
   grid-template-areas: 
     "header   header    header        header"
     "display  display   display       display"
@@ -47,17 +45,84 @@ body {
 .display {
   grid-area: display;
   background-color: #1b1a4f;
+  padding: var(--padding-20);
   color: #dddddd;
+}
+
+.display-password {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password {
+  font-size: 12rem;
+  font-weight: 600;
+}
+
+.service-desk {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.legend-title {
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.legend-text {
+  width: 100%;
+  margin: 19px 0;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.choice-button {
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 600;
 }
 
 .costumer {
   grid-area: costumer;
   background-color: #bdf8b1;
+  padding: var(--padding-20);
+
+}
+
+.generated-password {
+  width: 100%;
+  height: 120px;
+  margin-top: 20px;
+  padding: var(--padding-20);
+  text-align: center;
+
+  background-color: #fafafa;
 }
 
 .ticket-window {
   grid-area: ticket-window;
   background-color: #bee9e9;
+  padding: var(--padding-20);
+
 }
 
 .footer {
