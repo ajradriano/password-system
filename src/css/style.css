@@ -1,6 +1,5 @@
 @import 'variables.css';
 
-
 * {
   margin: 0;
   padding: 0;
@@ -99,13 +98,30 @@ body {
   border-radius: 5px;
   font-family: inherit;
   font-weight: 600;
+  cursor: pointer;
+  color: #f7f7f7;
+}
+
+.common-button {
+  background-color: #0071C1;
+}
+
+.quick-button {
+  background-color: #00AF50;
+}
+
+.priority-button {
+  background-color: #CC0001;
+}
+
+.service-button {
+  background-color: #1b5823;
 }
 
 .costumer {
   grid-area: costumer;
-  background-color: #bdf8b1;
   padding: var(--padding-20);
-
+  border: #c2ecb9 5px solid;
 }
 
 .generated-password {
@@ -114,15 +130,25 @@ body {
   margin-top: 20px;
   padding: var(--padding-20);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  background-color: #fafafa;
+.password-legend {
+  font-size: 0.9rem;
+  margin-right: 2rem;
+}
+
+.password-code {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .ticket-window {
   grid-area: ticket-window;
-  background-color: #bee9e9;
   padding: var(--padding-20);
-
+  border: #bee9e9 5px solid;
 }
 
 .footer {
