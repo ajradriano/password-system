@@ -21,7 +21,7 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 1fr 1.5fr 1.5fr;
+  grid-template-rows: 0.3fr 1fr 2fr 1fr;
   grid-gap: 10px;
   grid-template-areas: 
     "header   header    header        header"
@@ -136,6 +136,7 @@ body {
 }
 
 .password-legend {
+  display: none;
   font-size: 0.9rem;
   margin-right: 2rem;
 }

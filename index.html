@@ -13,6 +13,7 @@
   <title>UniSenhas</title>
 
   <script defer src="/src/js/script.js"></script>
+  <script defer src="/src/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -21,31 +22,31 @@
     </div>
     <div class="display">
       <div class="display-password">
-        <div class="password">R-28</div>
-        <div class="service-desk">Caixa 2</div>
+        <div id="display-code" class="password"></div>
+        <div id="display-desk" class="service-desk"></div>
       </div>
     </div>
     <div class="costumer">
       <div class="legend-title">Para Clientes:</div>
       <div class="legend-text">Escolha o seu tipo de atendimento:</div>
       <div class="buttons">
-        <button class="choice-button common-button">Comum</button>
-        <button class="choice-button quick-button">Rápido</button>
-        <button class="choice-button priority-button">Prioritário</button>
+        <button class="choice-button common-button" onclick="generatePassword('C')">Comum</button>
+        <button class="choice-button quick-button" onclick="generatePassword('R')">Rápido</button>
+        <button class="choice-button priority-button" onclick="generatePassword('P')">Prioritário</button>
       </div>
-      <div class="generated-password">
+      <div id="genPass" class="generated-password">
         <span class="password-legend">Sua senha é:</span>
-        <span class="password-code">P-29</span>
+        <span id="genPassDisplay" class="password-code"></span>
       </div>
     </div>
     <div class="ticket-window">
       <div class="legend-title">Para Caixas:</div>
       <div class="legend-text">Escolha em um caixa para chamar uma senha:</div>
       <div class="buttons">
-        <button class="choice-button service-button">Caixa 1</button>
-        <button class="choice-button service-button">Caixa 2</button>
-        <button class="choice-button service-button">Caixa 3</button>
-        <button class="choice-button service-button">Caixa 4</button>
+        <button class="choice-button service-button" onclick="callPass(1)">Caixa 1</button>
+        <button class="choice-button service-button" onclick="callPass(2)">Caixa 2</button>
+        <button class="choice-button service-button" onclick="callPass(3)">Caixa 3</button>
+        <button class="choice-button service-button" onclick="callPass(4)">Caixa 4</button>
       </div>
     </div>
     <div class="footer">
