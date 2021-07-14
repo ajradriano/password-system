@@ -5,18 +5,7 @@ let generatedPassDisplay  = document.querySelector('.password-code')
 let timer
 
 // Initialize
-let arrayPasswords    = [
-  "C-1",
-  "C-2",
-  "C-3",
-  "C-4",
-  "C-5",
-  "C-6",
-  "C-7",
-  "P-8",
-  "P-9",
-  "R-10"
-]
+let arrayPasswords    = []
 let counter           = 1
 displayCode.innerHTML = ''
 displayDesk.innerHTML = ''
@@ -24,7 +13,7 @@ console.log(arrayPasswords)
 
 function showPass(pass = '', desk = '') {
   displayCode.innerHTML = pass
-  displayDesk.innerHTML = desk
+  displayDesk.innerHTML = `Caixa ${desk}`
 }
 
 function clearPass() {
@@ -33,7 +22,7 @@ function clearPass() {
 }
 
 function generatePassword(serviceType) {
-  let password = serviceType + '-' + (counter++)
+  let password = `${serviceType} - ${(counter++)}`
   arrayPasswords.push(password)
   showGeneratesPass(password)
   console.log(arrayPasswords)
@@ -51,8 +40,9 @@ function showGeneratesPass(pass) {
 }
 
 function callPass(desk) {
-  console.log(arrayPasswords[1]);
-  arrayPasswords.splice(1, 1)
+  console.log(arrayPasswords[0])
+  arrayPasswords.shift()
+  showPass(arrayPasswords[0], desk)
   console.log(arrayPasswords)
 
 }
