@@ -152,6 +152,13 @@ body {
   border: #bee9e9 5px solid;
 }
 
+.alert-no-password {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: #bb0000;
+}
+
 .footer {
   grid-area: footer;
   margin-top: 5px;

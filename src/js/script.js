@@ -2,6 +2,7 @@ let displayCode             = document.getElementById('display-code')
 let displayDesk             = document.getElementById('display-desk')
 let generatedPassArea       = document.querySelector('.password-legend')
 let generatedPassDisplay    = document.querySelector('.password-code')
+let divAlertNoPass          = document.querySelector('.alert-no-password')
 
 // Initialize
 let timer
@@ -19,6 +20,11 @@ function showPass(pass = '', desk = '') {
     displayDesk.innerHTML = desk
     return
   }
+  alertNoPass()
+}
+
+function alertNoPass() {
+  divAlertNoPass.innerHTML = 'Não há senhas para serem chamadas.'
 }
 
 function generatePassword(serviceType) {
@@ -37,6 +43,7 @@ function generatePassword(serviceType) {
     break;
   }
   showGeneratesPass(password)
+  divAlertNoPass.innerHTML = ''
 }
 
 function showGeneratesPass(pass) {
@@ -57,15 +64,12 @@ function callPass(desk) {
       if (arrayPriorityPasswords.length > 0) {
         password = arrayPriorityPasswords[0]
         arrayPriorityPasswords.shift()
-        console.log('p', password);
       } else if (arrayQuickPasswords.length > 0) {
         password = arrayQuickPasswords[0]
         arrayQuickPasswords.shift()
-        console.log('p', password);
       } else {
         password = arrayCommonPasswords[0]
         arrayCommonPasswords.shift()
-        console.log('p', password);
       }
       break;
     case 2:
